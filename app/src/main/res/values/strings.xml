@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PotroTasks</string>
+
+    <string name = "default_web_client_id">60456359443-8l05jaasdi1r3jidjvqct9mc012uu7d3.apps.googleusercontent.com</string>
+</resources>
