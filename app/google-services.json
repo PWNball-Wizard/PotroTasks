@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "60456359443",
+    "project_id": "potrotasks",
+    "storage_bucket": "potrotasks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60456359443:android:72777cf2ab62e5df1251e6",
+        "android_client_info": {
+          "package_name": "com.example.potrotasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60456359443-cbrk6725oqnpqpi3c4npd8p3dakkf9vv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.potrotasks",
+            "certificate_hash": "e765941a29b862bb8c7ab977e3e0086d9ac5b302"
+          }
+        },
+        {
+          "client_id": "60456359443-8l05jaasdi1r3jidjvqct9mc012uu7d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBnaa-7djkzZyyB-5bftCJygKQeveZC-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60456359443-6c20jk43rrs6hj5g08b0tpuphnp0ludc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60456359443:android:46dc4dd153db76791251e6",
+        "android_client_info": {
+          "package_name": "com.mobil.potrotasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60456359443-a2aiktl3ftu3mi7tm1tjngueqmh4omst.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobil.potrotasks",
+            "certificate_hash": "e765941a29b862bb8c7ab977e3e0086d9ac5b302"
+          }
+        },
+        {
+          "client_id": "60456359443-8l05jaasdi1r3jidjvqct9mc012uu7d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBnaa-7djkzZyyB-5bftCJygKQeveZC-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60456359443-6c20jk43rrs6hj5g08b0tpuphnp0ludc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60456359443:android:68d46fbb7feb916b1251e6",
+        "android_client_info": {
+          "package_name": "com.potro.potrotasks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60456359443-hecbpf4t8i7r04870asuufkr5cdm0gal.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.potro.potrotasks",
+            "certificate_hash": "e765941a29b862bb8c7ab977e3e0086d9ac5b302"
+          }
+        },
+        {
+          "client_id": "60456359443-8l05jaasdi1r3jidjvqct9mc012uu7d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBnaa-7djkzZyyB-5bftCJygKQeveZC-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60456359443-6c20jk43rrs6hj5g08b0tpuphnp0ludc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
