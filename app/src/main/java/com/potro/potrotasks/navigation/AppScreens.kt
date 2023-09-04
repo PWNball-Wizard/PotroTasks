@@ -1,15 +1,19 @@
 package com.potro.potrotasks.navigation
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import com.potro.potrotasks.R
+sealed class AppScreens (
+    val route:String,
+    val title : String,
+    val icon : Int? = null
+    ){
+    //object SplashScreen : AppScreens("splash_screen", title = "Splash", icon = null)
+    object SignIn : AppScreens("signin_screen", title = "Sign", icon = null)
+    object HomeActivity : AppScreens("main_screen", title = "Home", icon = R.drawable.home)
+    object CalendarScreen : AppScreens("calendar_screen", title = "Calendar", icon = R.drawable.calendar)
+    object FocusScreen : AppScreens("focus_screen", title = "Focus", icon = R.drawable.focus)
+    object ProfileScreen : AppScreens("profile_screen", title = "Profile", icon = R.drawable.profile)
 
-sealed class AppScreens (val route:String){
-    object SplashScreen : AppScreens("splash_screen")
-    object SignIn : AppScreens("signin_screen")
-    object MainActivity : AppScreens("main_screen")
-    /*object AddTaskScreen : AppScreens("add_task_screen")
-    object TaskDetailScreen : AppScreens("task_detail_screen")
-    object EditTaskScreen : AppScreens("edit_task_screen")
-    object LocationScreen : AppScreens("location_screen")
-    object ProfileScreen : AppScreens("profile_screen")
-    object EditProfileScreen : AppScreens("edit_profile_screen")
-    object AboutScreen : AppScreens("about_screen")
-    object HelpScreen : AppScreens("help_screen")*/
 }

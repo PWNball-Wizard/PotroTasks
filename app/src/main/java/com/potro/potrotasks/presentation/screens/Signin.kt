@@ -33,7 +33,7 @@ fun SignInView(navController: NavController){
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
                         try {
-                            navController.navigate(AppScreens.MainActivity.route)
+                            navController.navigate(AppScreens.HomeActivity.route)
                         } catch (e: Exception) {
                             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
                         }
