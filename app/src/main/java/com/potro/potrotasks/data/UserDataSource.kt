@@ -11,5 +11,8 @@ object UserDataSource {
 
     fun getUserPicture() : String {
         return "${Firebase.auth.currentUser?.photoUrl}?access_token=${AccessToken.getCurrentAccessToken()?.token}"
+        /*
+        Dino: Supongo que me falta un archivo que tontiene la clase "AccessToken"
+         */
     }
 }
