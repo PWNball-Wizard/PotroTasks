@@ -12,5 +12,4 @@ object UserDataSource {
     fun getUserPicture() : String {
         return "${Firebase.auth.currentUser?.photoUrl}?access_token=${AccessToken.getCurrentAccessToken()?.token}"
     }
-
 }
