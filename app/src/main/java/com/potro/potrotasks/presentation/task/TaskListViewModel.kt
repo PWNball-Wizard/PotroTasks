@@ -3,11 +3,11 @@ package com.potro.potrotasks.presentation.task
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.potro.potrotasks.data.TaskDataSource
+//import com.potro.potrotasks.data.TaskDataSource
 import com.potro.potrotasks.domain.model.Task
 import kotlinx.coroutines.launch
 
-class TaskListViewModel : ViewModel() {
+/*class TaskListViewModel : ViewModel() {
 
     private val tasks = mutableStateListOf(
         Task(taskName = "",
@@ -70,4 +70,4 @@ class TaskListViewModel : ViewModel() {
         return getCurrentDateTask(date).size
     }
 
-}
+}*/

@@ -35,7 +35,7 @@ val Typography = Typography(
     */
 )
 
-val archivoRegular = FontFamily(Font(R.font.archivo_regular))//TODO: Cambiar a archivo_regular
+/*val archivoRegular = FontFamily(Font(R.font.archivo_regular))//TODO: Cambiar a archivo_regular
 val archivoLight = FontFamily(Font(R.font.archivo_light))//TODO: Cambiar a archivo_regular
 val archivoMedium = FontFamily(Font(R.font.archivo_medium))//TODO: Cambiar a archivo_regular
 val archivoBold = FontFamily(Font(R.font.archivo_bold))//TODO: Cambiar a archivo_regular
@@ -44,4 +44,4 @@ val interRegular = FontFamily(Font(R.font.inter_regular))//TODO: Cambiar a archi
 val interLight = FontFamily(Font(R.font.inter_light))//TODO: Cambiar a archivo_regular
 val interBold = FontFamily(Font(R.font.inter_bold))//TODO: Cambiar a archivo_regular
 val interBlack = FontFamily(Font(R.font.inter_black))//TODO: Cambiar a archivo_regular
-val interMedium = FontFamily(Font(R.font.inter_medium))//TODO: Cambiar a archivo_regular
+val interMedium = FontFamily(Font(R.font.inter_medium))//TODO: Cambiar a archivo_regular*/

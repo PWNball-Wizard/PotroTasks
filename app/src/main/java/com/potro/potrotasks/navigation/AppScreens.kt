@@ -15,5 +15,4 @@ sealed class AppScreens (
     object CalendarScreen : AppScreens("calendar_screen", title = "Calendar", icon = R.drawable.calendar)
     object FocusScreen : AppScreens("focus_screen", title = "Focus", icon = R.drawable.focus)
     object ProfileScreen : AppScreens("profile_screen", title = "Profile", icon = R.drawable.profile)
-
 }

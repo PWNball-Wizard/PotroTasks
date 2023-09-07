@@ -42,7 +42,7 @@ import me.saket.swipe.SwipeAction
 import com.potro.potrotasks.R
 import me.saket.swipe.SwipeableActionsBox
 
-@SuppressLint("UnrememberedMutableState")
+/*@SuppressLint("UnrememberedMutableState")
 @Composable
 fun TaskList(
     currDateTasks : String = "",
@@ -191,3 +191,5 @@ fun <T> SnapshotStateList<T>.updateList(newList: List<T>){
     clear()
     addAll(newList)
 }
+*/
+//

@@ -5,12 +5,12 @@ import com.google.firebase.ktx.Firebase
 
 object UserDataSource {
 
-    fun getUserName() : String {
+    /*fun getUserName() : String {
         return Firebase.auth.currentUser?.displayName.toString()
     }
 
     fun getUserPicture() : String {
         return "${Firebase.auth.currentUser?.photoUrl}?access_token=${AccessToken.getCurrentAccessToken()?.token}"
-    }
+    }*/
 
 }
