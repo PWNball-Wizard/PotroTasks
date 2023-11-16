@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">PotroTasks</string>
-
+    <string name="Pantalla1">Principal</string>
+    <string name="Pantalla2">Calendario</string>
+    <string name="Pantalla3">Enfoque</string>
+    <string name="Pantalla4">Perfil</string>
     <string name = "default_web_client_id">60456359443-8l05jaasdi1r3jidjvqct9mc012uu7d3.apps.googleusercontent.com</string>
 </resources>

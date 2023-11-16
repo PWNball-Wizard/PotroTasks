@@ -21,159 +21,102 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.ActivityCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.rememberNavController
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.potro.potrotasks.AppDatabase.AppDatabase
+import com.potro.potrotasks.domain.model.TasksViewModel
 import com.potro.potrotasks.navigation.AppNavigation
 import com.potro.potrotasks.navigation.AppScreens
 import com.potro.potrotasks.navigation.AppScreens.*
 import com.potro.potrotasks.navigation.BottomNavigationItems
 import com.potro.potrotasks.navigation.BottomNavigationMenu
+import com.potro.potrotasks.presentation.task.TaskViewModel
 import com.potro.potrotasks.ui.theme.PotroTasksTheme
 
 class MainActivity : ComponentActivity() {
 
+    companion object {
+        lateinit var database: AppDatabase
+    }
+
     @ExperimentalMaterial3Api
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        database = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java,
+            AppDatabase.NAME
+        ).fallbackToDestructiveMigration().build()
+
         installSplashScreen()
         setContent {
-
-            //MainPantalla()
-            //mainScreen()
-        //}
             PotroTasksTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //val navController = rememberNavController()
-                    //AppNavigation()
                     mainFS()
-                    //xd(navController = rememberNavController())
-                }
+                 }
             }
         }
     }
 }
+
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @ExperimentalMaterial3Api
 @Composable
-fun mainFS(){
-
+fun mainFS() {
     val navController = rememberNavController()
+    val notesVM: TaskViewModel = viewModel(modelClass = TaskViewModel::class.java)
 
-    val items = listOf(
-        HomeActivity,
-        CalendarScreen,
-        FocusScreen,
-        ProfileScreen
-        /*BottomNavigationItems(
-            route = "main_screen",
-            icon = R.drawable.home,
-            title = "Home"
-        ),
-        BottomNavigationItems(
-            route = "calendar_screen",
-            icon = R.drawable.calendar,
-            title = "Profile"
-        ),
-        BottomNavigationItems(
-            route = "focus_screen",
-            icon = R.drawable.focus,
-            title = "Settings"
-        ),
-        BottomNavigationItems(
-            route = "profile_screen",
-            icon = R.drawable.profile,
-            title = "Profile"
-        ),*/
-    )
+    // Inicializa el estado de autenticación aquí
+    val isAuthenticated = Firebase.auth.currentUser != null
 
+    // Manejar la navegación inicial y la configuración de la barra de navegación inferior
     Scaffold(
         bottomBar = {
-            //BottomNavigationMenu(navController = navController)
-            BottomNavigationMenu(navController = navController, items = items)
+            // Comprueba si el usuario está autenticado antes de mostrar la barra de navegación
+            if (isAuthenticated) {
+                BottomNavigationMenu(navController = navController, items = listOf(
+                    HomeActivity,
+                    CalendarScreen,
+                    FocusScreen,
+                    ProfileScreen
+                ))
+            }
         }
-    )
-    {
-        AppNavigation(navController = navController)
+    ) {
+        AppNavigation(navController = navController, taskVM = notesVM)
+    }
 
-        var activityToLaunch =
-            if(Firebase.auth.currentUser != null){
-                AppScreens.HomeActivity.route
+    // Efecto secundario para navegar a la pantalla de inicio de sesión si el usuario no está autenticado
+    LaunchedEffect(Unit) {
+        if (!isAuthenticated) {
+            navController.navigate(AppScreens.SignIn.route) {
+                // Asegúrate de que no podemos volver a la pantalla de login una vez autenticados
+                popUpTo(navController.graph.findStartDestination().id) {
+                    saveState = true
+                }
+                // Evita crear una nueva instancia si ya estamos viendo la pantalla de inicio de sesión
+                launchSingleTop = true
+                // Restaura el estado cuando volvamos a esta pantalla
+                restoreState = true
             }
-            else{
-                AppScreens.SignIn.route
-            }
-        navController.navigate(activityToLaunch)
+        }
     }
 }
-
-/*@ExperimentalMaterial3Api
-@Composable
-fun TopBar() {
-    //creamos un top bar
-    TopAppBar(
-        title = {
-            Text(
-                text = stringResource(id = R.string.app_name),
-                fontSize = 20.sp,
-                color = Color.White
-            )
-        },
-        colors = TopAppBarDefaults.smallTopAppBarColors(
-            containerColor = colorResource(id = R.color.purple_500),
-        )
-    )
-}*/
-
-/*@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun MainPantalla(){
-    val navController = rememberNavController()
-    //para mostrar el splash al inicio de la app debemos crear un mutableStateOf
-    //y pasarlo como parametro a la pantalla de splash
-    var splash by rememberSaveable {
-        mutableStateOf(true)
-    }
-
-    val navItems = listOf(
-        //SplashScreen,
-        //SignIn,
-        MainActivity,
-        CalendarScreen,
-        FocusScreen,
-        ProfileScreen
-    )
-    Scaffold(
-        topBar = {
-            TopBar()
-        },
-        bottomBar = {
-               BottomNavigationMenu(navController, navItems)
-        },
-        modifier = Modifier.background(color = Color.White)
-    )
-    {
-        //para quitar el error Content padding parameter it is not used
-        //le pasamos un modifier
-        Column(modifier = Modifier.padding(it)) {
-            Text(
-                text = stringResource(id = R.string.app_name),
-                fontSize = 20.sp,
-                color = Color.White
-            )
-        }
-        AppNavigation(navController = navController, startDestination = "splash_screen")
-    }*/
-//}

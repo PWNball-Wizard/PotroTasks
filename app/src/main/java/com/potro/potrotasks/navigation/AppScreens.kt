@@ -12,6 +12,7 @@ sealed class AppScreens (
     //object SplashScreen : AppScreens("splash_screen", title = "Splash", icon = null)
     object SignIn : AppScreens("signin_screen", title = "Sign", icon = null)
     object HomeActivity : AppScreens("main_screen", title = "Home", icon = R.drawable.home)
+    object AddTask : AppScreens("add_task", title = "Add Task", icon = null)
     object CalendarScreen : AppScreens("calendar_screen", title = "Calendar", icon = R.drawable.calendar)
     object FocusScreen : AppScreens("focus_screen", title = "Focus", icon = R.drawable.focus)
     object ProfileScreen : AppScreens("profile_screen", title = "Profile", icon = R.drawable.profile)

@@ -2,7 +2,7 @@
 <resources>
     <style name="Theme.PotroTasks.MiSplash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#FFFFFF</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/potro_splash2</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/potro_splash_sc</item>
         <item name="postSplashScreenTheme">@style/Theme.PotroTasks</item>
     </style>
 </resources>

@@ -41,6 +41,42 @@ import com.potro.potrotasks.navigation.AppScreens
 import me.saket.swipe.SwipeAction
 import com.potro.potrotasks.R
 import me.saket.swipe.SwipeableActionsBox
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Text
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun TaskList(tasks: List<Task>) {
+    LazyColumn(
+        modifier = Modifier.padding(16.dp)
+    ) {
+        items(tasks) { task ->
+            //TaskItem(task = task)
+        }
+    }
+}
+
+/*@Composable
+fun TaskItem(task: Task) {
+    Text(text = task.taskName ?: "", modifier = Modifier.padding(8.dp))
+    Text(text = task.taskDescription ?: "", modifier = Modifier.padding(8.dp))
+}
+
+@Preview
+@Composable
+fun TaskListPreview() {
+    val mockTasks = listOf(
+        Task(taskName = "Tarea 1", taskDescription = "Esta es la tarea 1"),
+        Task(taskName = "Tarea 2", taskDescription = "Esta es la tarea 2"),
+        Task(taskName = "Tarea 3", taskDescription = "Esta es la tarea 3")
+    )
+
+    TaskList(tasks = mockTasks)
+}
+
+*/
 
 /*@SuppressLint("UnrememberedMutableState")
 @Composable

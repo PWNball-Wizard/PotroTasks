@@ -95,3 +95,4 @@ private fun currentRoute(navController: NavController): String {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     return navBackStackEntry?.destination?.route ?: AppScreens.HomeActivity.route
 }
+
